@@ -28,7 +28,10 @@ az sql server create --name $servername --resource-group $resourcegroup --admin-
 az sql server firewall-rule list --resource-group $resourcegroup --server $servername
 
 #creates a server-based firewall – note – you should restrict the start/end ip range based on your environment
-az sql server firewall-rule create --resource-group $resourcegroup --server $servername --name $firewallrule --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+az sql server firewall-rule create 
+--resource-group $resourcegroup 
+--server $servername 
+--name $firewallrule --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
 
 #creates a general-purpose SQL database
 az sql db create --name $labdatabase --resource-group $resourcegroup --server $servername -e Basic --sample-name AdventureWorksLT
